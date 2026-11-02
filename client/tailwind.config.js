@@ -1,0 +1,1 @@
+export default { content: ['./index.html', './src/**/*.{js,jsx}'], theme: { extend: { colors: { ink: '#0b0e13', panel: '#121720', gold: '#d5ad63' }, fontFamily: { display: ['Playfair Display', 'serif'], sans: ['DM Sans', 'sans-serif'], mono: ['DM Mono', 'monospace'] } } }, plugins: [] };

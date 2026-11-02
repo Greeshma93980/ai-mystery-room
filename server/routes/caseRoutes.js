@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import { createCase, getCase, discoverClue, requestHint, accuse, getResult } from '../controllers/caseController.js';
+const router = Router();
+const wrap = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
+router.post('/', wrap(createCase));
+router.get('/:id', wrap(getCase));
+router.post('/:id/clues/:clueId/discover', wrap(discoverClue));
+router.post('/:id/hints', wrap(requestHint));
+router.post('/:id/accuse', wrap(accuse));
+router.get('/:id/result', wrap(getResult));
+export default router;

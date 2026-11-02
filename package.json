@@ -1,0 +1,13 @@
+{
+  "name": "ai-mystery-room",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["client", "server"],
+  "engines": { "node": ">=20 <23" },
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c yellow,cyan \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "build": "npm run build --workspace client",
+    "start": "npm run start --workspace server"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}
